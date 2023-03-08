@@ -101,7 +101,6 @@ export default function SubscriptionsList() {
                   <Descriptions column={1} labelStyle={{ minWidth: 148 }} size='small'>
                     <Descriptions.Item label="Subscription">{tokenId.slice(0, 8)}…{tokenId.slice(-8)}</Descriptions.Item>
                     <Descriptions.Item label="Paid by"><Typography.Link ellipsis href={`${process.env.NETWORK_EXPLORER_URL}/accounts/${owner}`} target="_blank" rel="noopener noreferrer">{owner.slice(0, 8)}…{owner.slice(-8)}</Typography.Link></Descriptions.Item>
-                    <Descriptions.Item label="Used by"><Typography.Link ellipsis href={`${process.env.NETWORK_EXPLORER_URL}/accounts/${mintedBy}`} target="_blank" rel="noopener noreferrer">{mintedBy.slice(0, 8)}…{mintedBy.slice(-8)}</Typography.Link></Descriptions.Item>
                     <Descriptions.Item label="Options">
                       <Button style={{ opacity: 0.5 }} size='small' type='default' onClick={showTransfer(tokenId)}>transfer</Button>
                     </Descriptions.Item>

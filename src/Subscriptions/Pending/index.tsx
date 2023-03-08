@@ -3,14 +3,14 @@ import { useParams, Link } from 'react-router-dom'
 import { Row, Col, Alert, Spin, Result, Button } from 'antd'
 import idToTokenId from '../../modules/idToTokenId'
 import { useContract, useChainState } from '@vechain.energy/use-vechain'
-import { ABI } from '../../modules/constants'
+import { ContractAddress, ABI } from '../../modules/constants'
 
 export default function SubscriptionsPending() {
   const params = useParams()
   const [tokenId, setTokenId] = useState<string>('')
   const [tokenExists, setTokenExists] = useState<boolean>(false)
   const [error, setError] = useState<string>('')
-  const { ownerOf } = useContract(process.env.CONTRACT_ADDRESS, ABI)
+  const { ownerOf } = useContract(ContractAddress, ABI)
   const { head } = useChainState()
 
   useEffect(() => {
