@@ -10,7 +10,7 @@ type Token = {
   owner: string
 }
 
-const { Paragraph } = Typography
+const { Text, Paragraph } = Typography
 
 export default function SubscriptionsList() {
   const [tokens, setTokens] = useState<Token[]>([])
@@ -90,6 +90,9 @@ export default function SubscriptionsList() {
                 <Link to={`https://${process.env.CHARGEBEE_HOSTED_ID}.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=${process.env.CHARGEBEE_SUBSCRIPTION_ID}&subscription[cf_wallet_address]=${account}`}>
                   <Button size='large' type="primary">Subscribe Now</Button>
                 </Link>
+              </Paragraph>
+              <Paragraph>
+                Use <Text code>4111 1111 1111 1111</Text> as credit card number.
               </Paragraph>
             </div>
           }
